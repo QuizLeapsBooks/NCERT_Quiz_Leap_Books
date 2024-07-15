@@ -42,6 +42,12 @@ header {
     margin: 0 5px;
 }
 
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
 .nav1 {
     display: flex;
     gap: 15px;
@@ -134,19 +140,6 @@ header {
     color: rgb(77, 79, 226);
 }
 
-.end {
-    display: inline-block;
-    color: blue;
-    background-color: red;
-    height: 40px;
-    width: 100%;
-    max-width: 300px;
-    font-size: 1.2em;
-    text-align: center;
-    border-radius: 10px;
-    margin: 10px auto;
-    padding: 10px;
-}
 .dynamic-text-container {
     text-align: center;
     margin: 20px 0;
@@ -164,25 +157,29 @@ header {
     }
 }
 
-
-@media (min-width: 768px) and (max-width: 1199px) {
-    .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .web-name {
-        margin-top: 10px;
+/* Media Queries */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
     }
 
     .nav1 {
-        margin-top: 10px;
-        margin-left: 0;
-        gap: 10px;
+        display: none;
+        flex-direction: column;
+        background: blueviolet;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        right: 0;
+        width: 100%;
     }
 
-    .scrolling-text h1 {
-        font-size:
+    .nav1.active {
+        display: flex;
     }
+}
 
+@media (min-width: 769px) {
+    .nav1 {
+        display: flex;
+    }
 }
